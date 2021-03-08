@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react"
 import { useHistory } from "react-router"
 import socketIOClient from "socket.io-client";
 
-const ENDPOINT = 'http://localhost:5000'
+const ENDPOINT = 'https://chatzy-backend.herokuapp.com/'
 
 const Chat = ({name,room}) =>{
 
