@@ -1,23 +1,26 @@
-import logo from './logo.svg';
+import {BrowserRouter, Switch, Route, Redirect} from 'react-router-dom'
+import { useState } from 'react';
+
 import './App.css';
+import Chat from './chat';
+import Landing from './landing';
 
 function App() {
+  const [name,setName] = useState('')
+  const [room,setRoom] = useState('')
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <Switch>
+          <Route exact path='/'>
+            <Landing setName={setName} setRoom={setRoom} />
+          </Route>
+          <Route exact path='/chat'>
+            {name? <Chat name={name} room={room} /> : <Redirect to='/' />}
+          </Route>
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 }
