@@ -2,6 +2,8 @@
 
 Simple real time chat app with chat rooms.
 
+Backend repo - https://github.com/Sammy-39/chatzy-backend
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
